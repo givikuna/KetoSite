@@ -1,0 +1,171 @@
+.footerImg {
+    border-radius: 50%;
+    opacity: 0.79.5;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform .2s;
+    margin: 0 auto;
+}
+
+.footerImg:hover {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+.footer {
+    position: static;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#footerImgA {
+    text-decoration: none;
+}
+
+#footerContactMeA {
+    cursor: pointer;
+    text-decoration: underline;
+    color: rgb(32, 32, 32);
+    font-size: 25px;
+    opacity: 0.9;
+}
+
+#footerContactMeA:hover {
+    opacity: 1;
+    color: rgb(0, 0, 0);
+}
+
+.footerContactAPopOutDiv {
+    padding: 10px;
+    transition: transform .15s;
+    margin: 0 auto;
+}
+
+.footerContactAPopOutDiv:hover {
+    transform: scale(1.004);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    align-items: center;
+}
+
+.headerKetoPhotographyA {
+    color: #ffffff;
+    font-size: 26px;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    background-color: #1b1b1b;
+    opacity: 0.9;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.inner {
+    width: 1300px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.headerHomeDiv {
+    display: table;
+    height: 100%;
+    float: left;
+}
+
+.headerHomeDiv div {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.headerNavigationNav {
+    float: right;
+    height: 100%;
+}
+
+.headerNavigationLi {
+    display: table;
+    height: 100%;
+    float: left;
+    margin-right: 30px;
+    font-size: 24px;
+}
+
+.headerNavigationSpan {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.headerNavigationA {
+    color: rgb(255, 255, 255);
+}
+
+.dropdown {
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+}
+
+.dropdown-content {
+    margin:0px -26px;
+    display: none;
+    position: fixed;
+    min-width: 125px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+}
+
+.colorStart {
+    background-color: #1b1b1b;
+    filter: brightness(1);
+}
+
+.dropdown-content a {
+    padding: 12px 12px;
+    display: block;
+    text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#a2 {
+    font: initial;
+    font-size: 20px;
+    filter: brightness(1.8);
+    color: rgb(255, 255, 255); 
+    text-decoration: inherit;
+    border: 1px thin rgb(34, 26, 26);
+}
+
+#a2:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    -ms-transform: scale(1.8);
+    -webkit-transform: scale(1.8);
+    transform: scale(1.02);
+}
+
+.headerBackground {
+    background-image: url("http://localhost:8092/?type=cover");
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 1000px;
+}
+
+.smallBr {
+    line-height: 10px;
+}
