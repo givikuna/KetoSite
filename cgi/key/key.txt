@@ -1,5 +1,6 @@
-index.js Port:8091 - open the htm file & edit some information in it
-image.js Port:8092 - takes care of all image related
-select.js Port:8093 - sends data about albums
-edit.js Port:8094 - used to edit the albums
-idMaker.js 8095 - choose the id for the new album/image
+index.js Port:8091 - open the htm file & edit some information in it;
+image.js Port:8092 - takes care of all image related;
+select.js Port:8093 - sends data about albums;
+edit.js Port:8094 - used to edit the albums;
+idMaker.js 8095 - choose the id for the new album/image;
+style_script_select.js 8096 - send script & style to html;
