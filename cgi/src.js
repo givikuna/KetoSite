@@ -4,7 +4,9 @@ const url = require('url');
 
 http.createServer(function (req, res) {
     var infoFromURL = url.parse(req.url, true).query;
-    var srcLocation = "../www/" + infoFromURL.type + "/" + infoFromURL.fileName + "." + infoFromURL.type;
+    var fileName = infoFromURL.file
+    var filExtension = fileName.split('.').pop();
+    var srcLocation = "../www/" + filExtension + "/" + infoFromURL.file;
 
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.writeHead(200, { "Access-Control-Allow-Origin": "*" });
