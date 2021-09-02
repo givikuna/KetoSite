@@ -34,6 +34,6 @@ function fillGalleries() {
     galleriesContentDiv.innerHTML = "";
 
     for (var i = 0; i < mainArray.length; i++) {
-        galleriesContentDiv.innerHTML = galleriesContentDiv.innerHTML + "<a id=\"a2\" href=\"\"> " + mainArray[i].name + "</a> ";
+        galleriesContentDiv.innerHTML = galleriesContentDiv.innerHTML + "<a id=\"a2\" href=\"http://localhost:8091/?page=in_gallery&gallery=" + mainArray[i].id + "&lang=eng\"> " + mainArray[i].name + "</a> ";
     }
 }
