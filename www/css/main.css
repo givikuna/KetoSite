@@ -105,10 +105,12 @@
     cursor: pointer;
     color: rgb(255, 255, 255);
     display: table-cell;
+    text-align: center;
     vertical-align: middle;
 }
 
 .headerNavigationA {
+    text-align: center;
     color: rgb(255, 255, 255);
 }
 

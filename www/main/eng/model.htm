@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost:8095/?type=css&file=main.css">
-    <script type="text/javascript" src="http://localhost:8095/?type=js&file=main.js"></script>
+    <link rel="stylesheet" href="http://localhost:8095/?file=main.css">
+    <script type="text/javascript" src="http://localhost:8095/?file=main.js"></script>
 </head>
 
-<body>
+<body onload="bodyOnloadFunc()">
     <div class="headerBackground">
 
         <header class="header">
@@ -48,7 +48,10 @@
                             <div class="dropdown">
                                 <a class="headerNavigationA"> Galleries </a>
                                 <div class="dropdown-content">
-                                    <!-- // -->
+                                    <hr style="height:21px; visibility:hidden;">
+                                    <div class="colorStart" id="galleriesContent">
+                                        <!-- // -->
+                                    </div>
                                 </div>
                             </div>
                         </span>

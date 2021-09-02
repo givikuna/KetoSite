@@ -11,7 +11,6 @@ http.createServer(function (req, res) {
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.writeHead(200, { "Access-Control-Allow-Origin": "*" });
     try {
-
         if (fs.existsSync(srcLocation)) {
             fs.readFile(srcLocation, function (err, data) {
                 res.write(data);
