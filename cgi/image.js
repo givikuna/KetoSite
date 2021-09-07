@@ -34,6 +34,17 @@ http.createServer(function (req, res) {
             //
         } else if (infoFromURL.type == "onPage") {
             //
+        } else if (infoFromURL.type == "myWork") {
+            imageLocation = "../www/img/onPage/myWork/myWork.jpg";
+            if (fs.existsSync(imageLocation)) {
+                fs.readFile(imageLocation, function (err, data) {
+                    res.write(data);
+                    return res.end();
+                });
+            } else {
+                res.write("");
+                return res.end();
+            }
         }
     } catch (error) {
         console.log("error: " + error);

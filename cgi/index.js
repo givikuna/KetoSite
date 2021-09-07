@@ -51,8 +51,8 @@ app.get('/', function (req, res) {
 
         if (infoFromURLPageNullChecker == "n") {
             if (!infoFromURL.lang) {
-                wrongPageErrorHTML();
-                return;
+                console.log("lang information was false; no lang by the name of " + infoFromURL.lang + " currently exists");
+                htmFilePath = path.join(__dirname, "../www/main/eng" , "index.htm");
             } else {
                 console.log("no page information was found; some lang information was found");
                 if (infoFromURL.lang == "eng" || infoFromURL.lang == "rus" || infoFromURL.lang == "geo") {
@@ -61,8 +61,7 @@ app.get('/', function (req, res) {
                     htmFilePath = path.join(__dirname, "../www/main/" + infoFromURL.lang, "index.htm");
                 } else {
                     console.log("lang information was false; no lang by the name of " + infoFromURL.lang + " currently exists");
-                    wrongPageErrorHTML();
-                    return;
+                    htmFilePath = path.join(__dirname, "../www/main/eng" , "index.htm");
                 }
             }
         } else {

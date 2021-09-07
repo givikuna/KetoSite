@@ -21,7 +21,26 @@
     text-align: center;
 }
 
-#footerImgA {
+.footerImgA {
+    text-decoration: none;
+}
+
+.viewMyWorkImg {
+    filter: brightness(70%);
+    opacity: 1;
+    transition: 0.5s filter;
+    margin: 0 auto;
+}
+
+.viewMyWorkImgTxt:hover {
+    filter: brightness(100%);
+}
+
+.viewMyWorkA:hover img {
+    filter: brightness(70%) drop-shadow(1px 1px 1px rgb(201, 201, 201)) sepia(21%);
+}
+
+.viewMyWorkA {
     text-decoration: none;
 }
 
@@ -148,7 +167,7 @@
     font: initial;
     font-size: 20px;
     filter: brightness(1.8);
-    color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
     text-decoration: inherit;
     border: 1px thin rgb(34, 26, 26);
 }
@@ -170,4 +189,24 @@
 
 .smallBr {
     line-height: 10px;
+}
+
+.viewMyWork {
+    position: static;
+    margin: 3%;
+    text-align: center;
+}
+
+.viewMyWorkImgTxt {
+    position: absolute;
+    top: 1250px;
+    left: 875px;
+    cursor: pointer;
+    color: white;
+    filter: brightness(99%);
+    font-size: 50px;
+}
+
+.facebookFeedDiv {
+    text-align: center;
 }

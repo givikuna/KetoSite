@@ -6,6 +6,7 @@
 var xhttp = new XMLHttpRequest();
 const ketoContactGmail = "ketocontact@gmail.com";
 const maingLang = "eng";
+var chosenAlbumID = null;
 var mainArray = [];
 
 
