@@ -1,17 +1,21 @@
 [
     {
         "id": 1,
-        "name": "advertisements",
+        "nameEng": "Advertisements",
+        "nameGeo": "რეკლამები",
+        "nameRus": "Рекламные объявления",
         "folderName": "advertisements",
         "images": [
             "69173916_1259754250850544_1434923692848054272_n.jpg",
             "69384781_1259754550850514_2549233952564969472_n.jpg"
         ],
-        "cover": "69173916_1259754250850544_1434923692848054272_n.jpg"
+        "cover": "69384781_1259754550850514_2549233952564969472_n.jpg"
     },
     {
         "id": 2,
-        "name": "families",
+        "nameEng": "Families",
+        "nameGeo": "ოჯახები",
+        "nameRus": "Семьи",
         "folderName": "families",
         "images": [
             "32202634_929053110587328_6277623937564147712_n.jpg",
@@ -45,7 +49,9 @@
     },
     {
         "id": 3,
-        "name": "nature",
+        "nameEng": "Nature",
+        "nameGeo": "ბუნება",
+        "nameRus": "Природа",
         "folderName": "nature",
         "images": [
             "68922737_1260720900753879_8312699147442454528_n.jpg",
@@ -55,11 +61,13 @@
             "73333367_1330875537071748_389379643406286848_n.jpg",
             "76710881_1330875250405110_9134678827593629696_n.jpg"
         ],
-        "cover": "73333367_1330875537071748_389379643406286848_n.jpg"
+        "cover": "76710881_1330875250405110_9134678827593629696_n.jpg"
     },
     {
         "id": 4,
-        "name": "portraits",
+        "nameEng": "Portraits",
+        "nameGeo": "პორტრეტები",
+        "nameRus": "Портреты",
         "folderName": "portraits",
         "images": [
             "457eh894yru8g.jpg",
@@ -156,7 +164,9 @@
     },
     {
         "id": 5,
-        "name": "street",
+        "nameEng": "Street",
+        "nameGeo": "ქუჩის ფოტოგრაფია",
+        "nameRus": "Уличная Фотография",
         "folderName": "street_photography",
         "images": [
             "71698331_1297524070406895_5802840862341726208_n.jpg",

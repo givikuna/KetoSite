@@ -1,0 +1,56 @@
+[
+    {
+        "id": "ketoPhotographyHeaderText",
+        "textEng": "Keto Photography",
+        "textGeo": "ქეთოს ფოტოგრაფია",
+        "textRus": "Кето Фотография"
+    },
+    {
+        "id": "aboutDropdownButton",
+        "textEng": "About",
+        "textGeo": "შესახებ",
+        "textRus": "??"
+    },
+    {
+        "id": "aboutMeDropdownOption",
+        "textEng": "About Me",
+        "textGeo": "ჩემს შესახებ",
+        "textRus": "обо мне"
+    },
+    {
+        "id": "equipmentDropdownOption",
+        "textEng": "Equipment",
+        "textGeo": "??",
+        "textRus": "Оборудование"
+    },
+    {
+        "id": "pricesDropdownOption",
+        "textEng": "Prices",
+        "textGeo": "ფასები",
+        "textRus": "Цены"
+    },
+    {
+        "id": "contactButton",
+        "textEng": "Contact",
+        "textGeo": "კონტაქტი",
+        "textRus": "Контакт"
+    },
+    {
+        "id": "galleriesButton",
+        "textEng": "Galleries",
+        "textGeo": "გალერეები",
+        "textRus": "Галереи"
+    },
+    {
+        "id": "languageDropdownButton",
+        "textEng": "Language",
+        "textGeo": "ენა",
+        "textRus": "Язык"
+    },
+    {
+        "id": "footerContactMeA",
+        "textEng": "Contact Me",
+        "textGeo": "დამიკავშირდით",
+        "textRus": "Свяжитесь со мной"
+    }
+]

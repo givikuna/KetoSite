@@ -1,0 +1,10 @@
+[
+    {
+        "name": "gallery_data",
+        "location": "../data/gallery_data/data.json"
+    },
+    {
+        "name": "headerTextInfo",
+        "location": "../data/headerTextInfo/data.json"
+    }
+]

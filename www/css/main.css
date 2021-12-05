@@ -26,18 +26,20 @@
 }
 
 .viewMyWorkImg {
-    filter: brightness(70%);
-    opacity: 1;
-    transition: 0.5s filter;
-    margin: 0 auto;
+    border-radius: 6px;
+    filter: saturate(90%) opacity(90%);
+
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
 }
 
-.viewMyWorkImgTxt:hover {
-    filter: brightness(100%);
-}
-
-.viewMyWorkA:hover img {
-    filter: brightness(70%) drop-shadow(1px 1px 1px rgb(201, 201, 201)) sepia(21%);
+.viewMyWorkImg:hover {
+    filter: saturate(100%) opacity(100%);
+    border-radius: 7px;
+    transform: scale(1.005);
 }
 
 .viewMyWorkA {
@@ -163,7 +165,7 @@
     display: block;
 }
 
-#a2 {
+.a2 {
     font: initial;
     font-size: 20px;
     filter: brightness(1.8);
@@ -172,7 +174,7 @@
     border: 1px thin rgb(34, 26, 26);
 }
 
-#a2:hover {
+.a2:hover {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
     opacity: 1;
     -ms-transform: scale(1.8);
@@ -187,24 +189,10 @@
     height: 1000px;
 }
 
-.smallBr {
-    line-height: 10px;
-}
-
 .viewMyWork {
     position: static;
     margin: 3%;
     text-align: center;
-}
-
-.viewMyWorkImgTxt {
-    position: absolute;
-    top: 1250px;
-    left: 875px;
-    cursor: pointer;
-    color: white;
-    filter: brightness(99%);
-    font-size: 50px;
 }
 
 .facebookFeedDiv {

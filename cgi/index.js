@@ -1,5 +1,4 @@
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// - MODULES;
 
 
@@ -13,11 +12,11 @@ const url = require('url');
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// - VARIABLES;
 
 
-const ketoContactGmail = "ketocontact@gmail.com";
+const pathToGmailInfo = "../data/contactGmail.txt";
+const ketoContactGmail = fs.readFileSync(pathToGmailInfo).toString();
 var errorText = null;
-var existOrNot = null;
 var htmFilePath = null;
-var correctPageChecker = "y";
+var mainLang = null;
 
 app.get('/', function (req, res) {
     var infoFromURL = url.parse(req.url, true).query;
@@ -27,9 +26,7 @@ app.get('/', function (req, res) {
 
 
     function errorTextFunc() {
-        if (infoFromURL.lang == undefined) {
-            errorText = "ERROR: the website is currently down, try again later or contact us at " + ketoContactGmail;
-        } else if (infoFromURL.lang == "eng") {
+        if (infoFromURL.lang == undefined || infoFromURL.lang == "eng") {
             errorText = "ERROR: the website is currently down, try again later or contact us at " + ketoContactGmail;
         } else if (infoFromURL.lang == "rus") {
             errorText = "ОШИБКА: веб-сайт в настоящее время не работает, повторите попытку позже или свяжитесь с нами по адресу " + ketoContactGmail;
@@ -38,9 +35,14 @@ app.get('/', function (req, res) {
         }
     }
 
+    function assignHtmFilePath(htlmPage) {
+
+    }
+
     function htmFileChecker() {
         var infoFromURLPageNullChecker = null;
 
+        //checking weter the page is a null or not
         if (!infoFromURL.page) {
             infoFromURLPageNullChecker = "n";
             console.log("no page information was found");
@@ -49,52 +51,44 @@ app.get('/', function (req, res) {
             console.log("some page information was found");
         }
 
+        //gettiing the file's location
         if (infoFromURLPageNullChecker == "n") {
-            if (!infoFromURL.lang) {
-                console.log("lang information was false; no lang by the name of " + infoFromURL.lang + " currently exists");
-                htmFilePath = path.join(__dirname, "../www/main/eng" , "index.htm");
-            } else {
-                console.log("no page information was found; some lang information was found");
-                if (infoFromURL.lang == "eng" || infoFromURL.lang == "rus" || infoFromURL.lang == "geo") {
-                    console.log("lang information was true");
-                    console.log("opening index.htm in " + infoFromURL.lang);
-                    htmFilePath = path.join(__dirname, "../www/main/" + infoFromURL.lang, "index.htm");
-                } else {
-                    console.log("lang information was false; no lang by the name of " + infoFromURL.lang + " currently exists");
-                    htmFilePath = path.join(__dirname, "../www/main/eng" , "index.htm");
-                }
-            }
+            htmFilePath = path.join(__dirname, "../www/main", "index.htm");
         } else {
-            if (infoFromURL.lang == "eng" || infoFromURL.lang == "rus" || infoFromURL.lang == "geo") {
-                htmFilePath = path.join(__dirname, "../www/main/" + infoFromURL.lang, infoFromURL.page + ".htm");
-            } else {
-                htmFilePath = path.join(__dirname, "../www/main/eng", infoFromURL.page + ".htm");
-            }
+            htmFilePath = path.join(__dirname, "../www/main", infoFromURL.page + ".htm");
         }
 
-        if (fs.existsSync(htmFilePath)) {
-            console.log("successfully located the htm file at " + htmFilePath);
-            fs.access(htmFilePath, fs.F_OK, (err) => {
-                if (err) {
-                    console.error(err);
-                    errorTextFunc();
-                    res.send(errorText);
-                    return;
-                }
-                res.sendFile(htmFilePath);
-            })
+        //checking what language the site is to be in
+        if (infoFromURL.lang == "eng" || infoFromURL.lang == "rus" || infoFromURL.lang == "geo") {
+            console.log("lang information was true");
+            console.log("opening index.htm in " + infoFromURL.lang + " language");
+            mainLang = infoFromURL.lang;
         } else {
-            console.log("failed to locate " + infoFromURL.page + ".htm");
+            console.log("lang information was false; no lang by the name of " + infoFromURL.lang + " currently exists");
+            mainLang = "eng";
+        }
+
+        console.log("looking for the html file at " + htmFilePath);
+        if (fs.existsSync(htmFilePath)) { //checking if the file exists
+            console.log("successfully located the htm file at " + htmFilePath);
+            fs.readFile(htmFilePath, 'utf-8', function (err, data) {
+                var dataToString = data.toString();
+                var replaced = dataToString.replace(/@lang/g, mainLang);
+                res.write(replaced);
+                return res.end();
+            });
+        } else {
             wrongPageErrorHTML();
         }
     }
 
+    //finish making error.htm & 
     function wrongPageErrorHTML() {
         console.log("failed to locate " + infoFromURL.page + ".htm");
         if (infoFromURL.lang == "eng" || infoFromURL.lang == "rus" || infoFromURL.lang == "geo") {
-            htmFilePath = path.join(__dirname, "../www/main/error/" + infoFromURL.lang, "error.htm");
+            htmFilePath = path.join(__dirname, "../www/main/error", "error.htm");
         } else {
-            htmFilePath = path.join(__dirname, "../www/main/error/eng", "error.htm");
+            htmFilePath = path.join(__dirname, "../www/main/error", "error.htm");
         }
 
         if (fs.existsSync(htmFilePath)) {
@@ -121,28 +115,28 @@ app.get('/', function (req, res) {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// - MAIN;
 
 
-    if (infoFromURL.page == "about" || infoFromURL.page == "album" || infoFromURL.page == "contact" || infoFromURL.page == "equipment" || infoFromURL.page == "index" || infoFromURL.page == "model" || infoFromURL.page == "pricing") {
+    if (infoFromURL.page == "about" || infoFromURL.page == "in_gallery" || infoFromURL.page == "album" || infoFromURL.page == "contact" || infoFromURL.page == "equipment" || infoFromURL.page == "index" || infoFromURL.page == "model" || infoFromURL.page == "pricing") {
         console.log("//////////////////////////////////////////////////////////////////");
         console.log("successfully requested " + infoFromURL.page + ".htm");
         htmFileChecker();
-    } else if (infoFromURL.lang || !infoFromURL) {
+    } else if (infoFromURL.lang && !infoFromURL.page) {
         console.log("//////////////////////////////////////////////////////////////////");
-        console.log("successfully requested a null with a language");
+        console.log("successfully requested a page null w/ language");
+        htmFileChecker();
+    } else if (!infoFromURL.lang) {
+        console.log("//////////////////////////////////////////////////////////////////");
+        console.log("successfully requested a language nul;");
         htmFileChecker();
     } else if (!infoFromURL) {
         console.log("//////////////////////////////////////////////////////////////////");
-        console.log("successfully requested a full null");
+        console.log("successfully requested a complete null");
         htmFileChecker();
     } else if (!infoFromURL.page) {
         console.log("//////////////////////////////////////////////////////////////////");
         console.log("successfully requested a page null");
         htmFileChecker();
-    } else if (infoFromURL.page == "in_gallery") {
-        console.log("//////////////////////////////////////////////////////////////////");
-        console.log("successfully requested in_gallery.htm");
     } else {
         console.log("//////////////////////////////////////////////////////////////////");
-        correctPageChecker == "n";
         console.log("successfully requested an unkown " + infoFromURL.page + ".htm");
         wrongPageErrorHTML();
     }
@@ -152,22 +146,3 @@ console.log('Server running at http://127.0.0.1:8091/');
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// - OTHER COMMENTS;
-
-
-/*
-    fs.access(htmFilePath, fs.F_OK, (err) => {
-        if (err) {
-            console.error(err);
-            res.send("Error to finding index file");
-            return;
-        }
-        res.sendFile(htmFilePath);
-    })
-*/
-
-// = path.join(__dirname, "../www", "index.htm");
-
-/*
-    res.write("");
-    return res.end();
-*/
