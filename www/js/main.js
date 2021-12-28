@@ -40,14 +40,12 @@ function fillGalleries() {
     galleriesContentDiv.innerHTML = "";
 
     for (var i = 0; i < mainArray.length; i++) {
-        if (maingLang == "eng" || maingLang == "Eng" || maingLang == "eNg" || maingLang == "enG" || maingLang == "ENG" || maingLang == "eNG" || maingLang == "EnG" || maingLang == "ENg" || maingLang == "English" || maingLang == "english" || maingLang == "ENGLISH") {
-            galleriesContentDiv.innerHTML = galleriesContentDiv.innerHTML + "<a class=\"a2\" href=\"http://localhost:8091/?page=in_gallery&gallery=" + mainArray[i].id + "&lang=eng\">" + mainArray[i].nameEng + "</a> ";
-            fillHeaderBlanks("eng");
-        } else if (maingLang == "rus" || maingLang == "Rus" || maingLang == "rUs" || maingLang == "ruS" || maingLang == "RUS" || maingLang == "rUS" || maingLang == "EuS" || maingLang == "RUs" || maingLang == "Russian" || maingLang == "russian" || maingLang == "RUSSIAN") {
-            galleriesContentDiv.innerHTML = galleriesContentDiv.innerHTML + "<a class=\"a2\" href=\"http://localhost:8091/?page=in_gallery&gallery=" + mainArray[i].id + "&lang=eng\">" + mainArray[i].nameRus + "</a> ";
+        var maingLangToLowerCase = maingLang.toLowerCase();
+        if (maingLangToLowerCase == "rus" || maingLangToLowerCase == "russian") {
+            galleriesContentDiv.innerHTML = galleriesContentDiv.innerHTML + "<a class=\"a2\" href=\"http://localhost:8091/?page=in_gallery&gallery=" + mainArray[i].id + "&lang=rus\">" + mainArray[i].nameRus + "</a> ";
             fillHeaderBlanks("rus");
-        } else if (maingLang == "geo" || maingLang == "Geo" || maingLang == "gEo" || maingLang == "geO" || maingLang == "GEO" || maingLang == "gEO" || maingLang == "GeO" || maingLang == "GEo" || maingLang == "Georgian" || maingLang == "georgian" || maingLang == "GEORGIAN") {
-            galleriesContentDiv.innerHTML = galleriesContentDiv.innerHTML + "<a class=\"a2\" href=\"http://localhost:8091/?page=in_gallery&gallery=" + mainArray[i].id + "&lang=eng\">" + mainArray[i].nameGeo + "</a> ";
+        } else if (maingLangToLowerCase == "geo" || maingLangToLowerCase == "georgian") {
+            galleriesContentDiv.innerHTML = galleriesContentDiv.innerHTML + "<a class=\"a2\" href=\"http://localhost:8091/?page=in_gallery&gallery=" + mainArray[i].id + "&lang=geo\">" + mainArray[i].nameGeo + "</a> ";
             fillHeaderBlanks("geo");
         } else {
             galleriesContentDiv.innerHTML = galleriesContentDiv.innerHTML + "<a class=\"a2\" href=\"http://localhost:8091/?page=in_gallery&gallery=" + mainArray[i].id + "&lang=eng\">" + mainArray[i].nameEng + "</a> ";
@@ -63,7 +61,17 @@ function fillPortfolioSection() {
     for (var i = 0; i < mainArray.length; i++) {
         var coverImg = mainArray[i].cover;
         var coverAlbumName = mainArray[i].folderName;
-        viewMyWorkHomePageIdDiv.innerHTML = viewMyWorkHomePageIdDiv.innerHTML + "<a class=\"viewMyWorkA\" href=\"http://localhost:8091/?page=album&lang=eng\"> <img class=\"viewMyWorkImg\" width=550px height=400px src=\"http://localhost:8092/?type=albumCover&coverImg=" + coverImg + "&albumName=" + coverAlbumName + "\"></a>";
+        var maingLangToLowerCase = maingLang.toLowerCase();
+        if (maingLangToLowerCase == "rus" || maingLangToLowerCase == "russian") {
+            viewMyWorkHomePageIdDiv.innerHTML = viewMyWorkHomePageIdDiv.innerHTML + "<a class=\"viewMyWorkA\" href=\"http://localhost:8091/?page=in_gallery&gallery=" + mainArray[i].id + "&lang=rus\"> <img class=\"viewMyWorkImg\" width=550px height=400px src=\"http://localhost:8092/?type=albumCover&coverImg=" + coverImg + "&albumName=" + coverAlbumName + "\"></a>";
+            fillHeaderBlanks("rus");
+        } else if (maingLangToLowerCase == "geo" || maingLangToLowerCase == "georgian") {
+            viewMyWorkHomePageIdDiv.innerHTML = viewMyWorkHomePageIdDiv.innerHTML + "<a class=\"viewMyWorkA\" href=\"http://localhost:8091/?page=in_gallery&gallery=" + mainArray[i].id + "&lang=geo\"> <img class=\"viewMyWorkImg\" width=550px height=400px src=\"http://localhost:8092/?type=albumCover&coverImg=" + coverImg + "&albumName=" + coverAlbumName + "\"></a>";
+            fillHeaderBlanks("geo");
+        } else {
+            viewMyWorkHomePageIdDiv.innerHTML = viewMyWorkHomePageIdDiv.innerHTML + "<a class=\"viewMyWorkA\" href=\"http://localhost:8091/?page=in_gallery&gallery=" + mainArray[i].id + "&lang=eng\"> <img class=\"viewMyWorkImg\" width=550px height=400px src=\"http://localhost:8092/?type=albumCover&coverImg=" + coverImg + "&albumName=" + coverAlbumName + "\"></a>";
+            fillHeaderBlanks("eng");
+        }
     }
 }
 

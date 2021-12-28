@@ -6,80 +6,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://localhost:8095/?file=main.css">
-    <script type="text/javascript" src="http://localhost:8095/?file=main.js"></script>
+    <script type="text/javascript" src="http://localhost:8095/?file=main.js&lang=@lang"></script>
 </head>
 
 <body onload="bodyOnloadFunc()">
-        <header class="header">
-            <div class="inner">
-                <div class="headerHomeDiv">
-                    <div>
-                        <a class="headerKetoPhotographyA" href="http://localhost:8091/?page=index&lang=eng"> Keto
-                            Photography </a>
-                    </div>
-                </div>
-                <nav class="headerNavigationNav">
-                    <li class="headerNavigationLi">
-                        <span class="headerNavigationSpan">
-                            <div class="dropdown">
-                                <a class="headerNavigationA"> About </a>
-                                <div class="dropdown-content">
-                                    <hr style="height:21px; visibility:hidden;">
-                                    <div class="colorStart">
-                                        <a id="a2" href="http://localhost:8091/?type=aboutme&lang=eng">About Me</a>
-                                        <a id="a2" href="http://localhost:8091/?type=equipment&lang=rus">Equipment</a>
-                                        <a id="a2" href="http://localhost:8091/?type=prices&lang=geo">Prices</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </span>
-                    </li>
-                    <li class="headerNavigationLi">
-                        <span class="headerNavigationSpan">
-                            <a class="headerNavigationA" href="http://localhost:8091/?page=contact&lang=eng">
-                                Contact
-                            </a>
-                        </span>
-                    </li>
-                    <li class="headerNavigationLi">
-                        <span class="headerNavigationSpan">
-                            <div class="dropdown">
-                                <a class="headerNavigationA"> Galleries </a>
-                                <div class="dropdown-content">
-                                    <hr style="height:21px; visibility:hidden;">
-                                    <div class="colorStart" id="galleriesContent">
-                                        <!-- // -->
-                                    </div>
-                                </div>
-                            </div>
-                        </span>
-                    </li>
-                    <li class="headerNavigationLi">
-                        <span class="headerNavigationSpan">
-                            <div class="dropdown">
-                                <a class="headerNavigationA"> Language </a>
-                                <div class="dropdown-content">
-                                    <hr style="height:21px; visibility:hidden;">
-                                    <div class="colorStart">
-                                        <a id="a2" href="http://localhost:8091/?type=model&lang=rus">English</a>
-                                        <a id="a2" href="http://localhost:8091/?type=model&lang=rus">Russian</a>
-                                        <a id="a2" href="http://localhost:8091/?type=model&lang=geo">Georgian</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </span>
-                    </li>
-                </nav>
-            </div>
-        </header>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0"
+        nonce="NxQ1NQuK"></script>
 
-    <!-- // -->
+    <header class="header">
+        <div class="inner">
+            <div class="headerHomeDiv">
+                <div>
+                    <!-- / Keto Photography / ქეთოს ფოტოგრაფია / Кето Фотография / -->
+                    <a class="headerKetoPhotographyA" id="ketoPhotographyHeaderText"
+                        href="http://localhost:8091/?page=index&lang=@lang"></a>
+                </div>
+            </div>
+            <nav class="headerNavigationNav">
+                <li class="headerNavigationLi">
+                    <span class="headerNavigationSpan">
+                        <div class="dropdown">
+                            <!-- / About / შესახებ / ?? / -->
+                            <a class="headerNavigationA" id="aboutDropdownButton"> </a>
+                            <div class="dropdown-content">
+                                <hr style="height:21px; visibility:hidden;">
+                                <div class="colorStart">
+                                    <!-- / About Me / ჩემს შესახებ / обо мне / -->
+                                    <a class="a2" id="aboutMeDropdownOption"
+                                        href="http://localhost:8091/?page=aboutme&lang=@lang"></a>
+                                    <!-- / Equipment / აღჭურვილობა / Оборудование / -->
+                                    <a class="a2" id="equipmentDropdownOption"
+                                        href="http://localhost:8091/?page=equipment&lang=@lang"></a>
+                                    <!-- / Prices / ფასები / Цены / -->
+                                    <a class="a2" id="pricesDropdownOption"
+                                        href="http://localhost:8091/?page=prices&lang=@lang"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+                </li>
+                <li class="headerNavigationLi">
+                    <span class="headerNavigationSpan">
+                        <!-- / Contact / კონტაქტი / Контакт / -->
+                        <a class="headerNavigationA" id="contactButton"
+                            href="http://localhost:8091/?page=contact&lang=@lang"></a>
+                    </span>
+                </li>
+                <li class="headerNavigationLi">
+                    <span class="headerNavigationSpan">
+                        <div class="dropdown">
+                            <!-- / Galleries / გალერეები / Галереи / -->
+                            <a class="headerNavigationA" id="galleriesButton"></a>
+                            <div class="dropdown-content">
+                                <hr style="height:21px; visibility:hidden;">
+                                <div class="colorStart" id="galleriesContent"></div>
+                            </div>
+                        </div>
+                    </span>
+                </li>
+                <li class="headerNavigationLi">
+                    <span class="headerNavigationSpan">
+                        <div class="dropdown">
+                            <!-- / Language / ენა / Язык /-->
+                            <a class="headerNavigationA" id="languageDropdownButton"></a>
+                            <div class="dropdown-content">
+                                <hr style="height:21px; visibility:hidden;">
+                                <div class="colorStart">
+                                    <!-- / English / ინგლისური / английский /-->
+                                    <a class="a2" id="englishDropdownOption"
+                                        href="http://localhost:8091/?type=index&lang=eng"> English </a>
+                                    <!-- / Russian / რუსული / русский /-->
+                                    <a class="a2" id="russianDropdownOption"
+                                        href="http://localhost:8091/?type=index&lang=rus"> русский </a>
+                                    <!-- / Georgian / ქართული / Грузинский /-->
+                                    <a class="a2" id="georgianDropdownOption"
+                                        href="http://localhost:8091/?type=index&lang=geo"> ქართული </a>
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+                </li>
+            </nav>
+        </div>
+    </header>
 
     <div class="footer">
         <br>
         <br>
         <div class="footerContactAPopOutDiv">
-            <a id="footerContactMeA" href="http://localhost:8091/?page=contact&lang=eng"> Contact Me </a>
+            <!-- / Contact Me / დამიკავშირდით / Свяжитесь со мной / -->
+            <a id="footerContactMeA" href="http://localhost:8091/?page=contact&lang=eng"></a>
         </div>
         <br>
         <p>
@@ -101,6 +118,8 @@
         </p>
         <br>
     </div>
+
+    <p id="extraInfo"></p>
 </body>
 
 </html>

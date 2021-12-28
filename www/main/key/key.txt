@@ -1,0 +1,10 @@
+aboutme.htm - Detailed information about Keto
+album.htm - 
+contact.htm - Contact information in order to contant Keto
+equipment.htm - Information about Keto's equipment
+error.htm - file you're sent to when the url makes no damned sense bruh
+index.htm - Home page of the website
+in_gallery - 
+in_image.htm - Information inside the image about the image
+model.htm - Blueprint that all the other pages are built on
+prices.htm - Prices of Keto's pictures
