@@ -3,54 +3,119 @@
         "id": "ketoPhotographyHeaderText",
         "textEng": "Keto Photography",
         "textGeo": "ქეთოს ფოტოგრაფია",
-        "textRus": "Кето Фотография"
+        "textRus": "Кето Фотография",
+        "page": "any"
     },
     {
         "id": "aboutDropdownButton",
         "textEng": "About",
         "textGeo": "შესახებ",
-        "textRus": "??"
+        "textRus": "??",
+        "page": "any"
     },
     {
         "id": "aboutMeDropdownOption",
         "textEng": "About Me",
         "textGeo": "ჩემს შესახებ",
-        "textRus": "обо мне"
+        "textRus": "обо мне",
+        "page": "any"
     },
     {
         "id": "equipmentDropdownOption",
         "textEng": "Equipment",
         "textGeo": "??",
-        "textRus": "Оборудование"
+        "textRus": "Оборудование",
+        "page": "any"
     },
     {
         "id": "pricesDropdownOption",
         "textEng": "Prices",
         "textGeo": "ფასები",
-        "textRus": "Цены"
+        "textRus": "Цены",
+        "page": "any"
     },
     {
         "id": "contactButton",
         "textEng": "Contact",
         "textGeo": "კონტაქტი",
-        "textRus": "Контакт"
+        "textRus": "Контакт",
+        "page": "any"
     },
     {
         "id": "galleriesButton",
         "textEng": "Galleries",
         "textGeo": "გალერეები",
-        "textRus": "Галереи"
+        "textRus": "Галереи",
+        "page": "any"
     },
     {
         "id": "languageDropdownButton",
         "textEng": "Language",
         "textGeo": "ენა",
-        "textRus": "Язык"
+        "textRus": "Язык",
+        "page": "any"
     },
     {
         "id": "footerContactMeA",
         "textEng": "Contact Me",
         "textGeo": "დამიკავშირდით",
-        "textRus": "Свяжитесь со мной"
+        "textRus": "Свяжитесь со мной",
+        "page": "any"
+    },
+    {
+        "id": "first-name-label",
+        "textEng": "First Name",
+        "textGeo": "სახელი",
+        "textRus": "Имя",
+        "page": "contact"
+    },
+    {
+        "id": "middle-name-label",
+        "textEng": "Middle Name",
+        "textGeo": "მეორე სახელი",
+        "textRus": "Второе имя",
+        "page": "contact"
+    },
+    {
+        "id": "last-name-label",
+        "textEng": "Last Name",
+        "textGeo": "გვარი",
+        "textRus": "Фамилия",
+        "page": "contact"
+    },
+    {
+        "id": "email-address-label",
+        "textEng": "Email Address",
+        "textGeo": "ელექტრონული მისამართი",
+        "textRus": "Адрес электронной почты",
+        "page": "contact"
+    },
+    {
+        "id": "phone-number-label",
+        "textEng": "Phone Number",
+        "textGeo": "ტელეფონის ნომერი",
+        "textRus": "Телефонный номер",
+        "page": "contact"
+    },
+    {
+        "id": "subject-label",
+        "textEng": "Subject",
+        "textGeo": "თემა",
+        "textRus": "Тема",
+        "page": "contact"
+    },
+    {
+        "id": "message-label",
+        "textEng": "Message",
+        "textGeo": "წერილი",
+        "textRus": "Письмо",
+        "page": "contact"
+    },
+    {
+        "id": "formSubmitButtonID",
+        "textEng": "Send",
+        "textGeo": "გაგზავნა",
+        "textRus": "Отправлять",
+        "page": "contact"
     }
 ]
