@@ -54,11 +54,28 @@
 	border-radius: 6px;
 	filter: saturate(90%) opacity(90%);
 
-	-webkit-transition: all 500ms ease;
-	-moz-transition: all 500ms ease;
-	-ms-transition: all 500ms ease;
-	-o-transition: all 500ms ease;
 	transition: all 500ms ease;
+}
+
+.imgForIn_Gallery {
+	border-radius: 6px;
+	margin-left:10px;
+	margin-right:10px;
+	max-height:505px;
+	max-width:600px;
+	height:auto;
+	width:auto;
+	
+	transition: transform .15s;
+}
+
+.imgForIn_Gallery:hover {
+	border-radius: 7px;
+	transform: scale(1.005);
+}
+
+.centeredDivForImages {
+	text-align: center;
 }
 
 .viewMyWorkImg:hover {
@@ -232,6 +249,12 @@
 }
 
 .viewMyWork {
+	position: static;
+	margin: 3%;
+	text-align: center;
+}
+
+#imagesOfTheGallery {
 	position: static;
 	margin: 3%;
 	text-align: center;

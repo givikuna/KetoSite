@@ -42,7 +42,7 @@ app.get('/', function (req, res) {
     function htmFileChecker() {
         var infoFromURLPageNullChecker = null;
 
-        //checking weter the page is a null or not
+        // checking weter the page is a null or not
         if (!infoFromURL.page) {
             infoFromURLPageNullChecker = "n";
             console.log("no page information was found");
@@ -51,17 +51,17 @@ app.get('/', function (req, res) {
             console.log("some page information was found");
         }
 
-        //gettiing the file's location
+        // gettiing the file's location
         if (infoFromURLPageNullChecker == "n") {
             htmFilePath = path.join(__dirname, "../www/main", "index.htm");
         } else {
             htmFilePath = path.join(__dirname, "../www/main", infoFromURL.page + ".htm");
         }
 
-        //checking what language the site is to be in
+        // checking what language the site is to be in
         if (infoFromURL.lang == "eng" || infoFromURL.lang == "rus" || infoFromURL.lang == "geo") {
             console.log("lang information was true");
-            console.log("opening index.htm in " + infoFromURL.lang + " language");
+            console.log("opening the file in " + infoFromURL.lang + " language");
             mainLang = infoFromURL.lang;
         } else {
             console.log("lang information was false; no lang by the name of " + infoFromURL.lang + " currently exists");
@@ -74,6 +74,14 @@ app.get('/', function (req, res) {
             fs.readFile(htmFilePath, 'utf-8', function (err, data) {
                 var dataToString = data.toString();
                 var replaced = dataToString.replace(/@lang/g, mainLang);
+                console.log("changed the @lang into " + infoFromURL.mainLang + " as requested");
+		if (infoFromURL.page == "in_gallery") {
+			replaced = replaced.replace(/@nameOfTheAlbumForTheGallery/g, infoFromURL.galleryFolderName);
+			console.log("changed the @nameOfTheAlbumForTheGallery into " + infoFromURL.galleryFolderName + " as requested");
+			replaced = replaced.replace(/@infoForTheIDOfTheArrayOfTheGallery/g, infoFromURL.galleryID);
+			console.log("changed the @infoForTheIDOfTheArrayOfTheGallery into " + infoFromURL.galleryID + " as requested");
+		}
+		console.log("fixing of the code is finished");
                 res.write(replaced);
                 return res.end();
             });
@@ -82,7 +90,7 @@ app.get('/', function (req, res) {
         }
     }
 
-    //finish making error.htm & 
+    // finish making error.htm & 
     function wrongPageErrorHTML() {
         console.log("failed to locate " + infoFromURL.page + ".htm");
         if (infoFromURL.lang == "eng" || infoFromURL.lang == "rus" || infoFromURL.lang == "geo") {

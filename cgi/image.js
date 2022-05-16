@@ -20,11 +20,13 @@ http.createServer(function (req, res) {
     }
 
     try {
+        console.log(infoFromURL);
         if (infoFromURL.type == "icon") { imageLocation = "../www/img/icons/" + infoFromURL.img; }
         else if (infoFromURL.type == "cover") { imageLocation = "../www/img/onPage/cover/cover.jpg"; }
-        else if (infoFromURL.type == "albumCover") { imageLocation = "../img/albums/" + infoFromURL.albumName + "/" + infoFromURL.coverImg; }
-        else if (infoFromURL.type == "img") { /* // */ }
-        sendImage();
+        else if (infoFromURL.type == "albumCover") { imageLocation = "../www/img/onPage/AlbumCovers/" + infoFromURL.coverImg; }
+        else if (infoFromURL.type == "img") { imageLocation = "../img/albums/" + infoFromURL.albumName + "/" + infoFromURL.requestedImage; }
+	console.log(imageLocation);
+        sendImage();	
     } catch (error) {
         console.log("error: " + error);
     }
