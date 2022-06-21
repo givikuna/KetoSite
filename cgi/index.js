@@ -76,8 +76,6 @@ app.get('/', function (req, res) {
                 var replaced = dataToString.replace(/@lang/g, mainLang);
                 console.log("changed the @lang into " + infoFromURL.mainLang + " as requested");
 		if (infoFromURL.page == "in_gallery") {
-			replaced = replaced.replace(/@nameOfTheAlbumForTheGallery/g, infoFromURL.galleryFolderName);
-			console.log("changed the @nameOfTheAlbumForTheGallery into " + infoFromURL.galleryFolderName + " as requested");
 			replaced = replaced.replace(/@infoForTheIDOfTheArrayOfTheGallery/g, infoFromURL.galleryID);
 			console.log("changed the @infoForTheIDOfTheArrayOfTheGallery into " + infoFromURL.galleryID + " as requested");
 		}
