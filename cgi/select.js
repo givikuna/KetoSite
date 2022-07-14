@@ -30,7 +30,7 @@ http.createServer(function (req, res) {
         res.write(fullArray.toString());
         return res.end();
     } catch (error) {
-        console.log(error);
+        console.log("select.js ERROR: " + error);
     }
 }).listen(8093);
 console.log('Server running at http://127.0.0.1:8093/');

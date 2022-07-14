@@ -22,37 +22,25 @@ http.createServer(function (req, res) {
 					var replaced1 = dataToString.replace('@lang', infoFromURL.lang);
 					var replaced = replaced1.replace('@ketoGmailINFORMATION', ketoContactGmail);
 					if (infoFromURL.page == "in_gallery") {
-						console.log("began to change @nameOfTheAlbumForTheGallery into " + infoFromURL.nameOfAlbum);
 						replaced = replaced.replace(/@nameOfTheAlbumForTheGallery/g, infoFromURL.nameOfAlbum);
-						console.log("finished changing @nameOfTheAlbumForTheGallery into " + infoFromURL.nameOfAlbum);
-
-						console.log("//");
-						console.log("// / //");
-						console.log("//");
-
-						console.log("began to change @infoForTheIDOfTheArrayOfTheGallery into " + infoFromURL.albumID);
 						replaced = replaced.replace(/@infoForTheIDOfTheArrayOfTheGallery/g, infoFromURL.albumID);
-						console.log("finished changing @infoForTheIDOfTheArrayOfTheGallery into " + infoFromURL.albumID);
 					}
-					console.log('opened ' + srcLocation);
 					res.write(replaced);
 					return res.end();
 				});
 			} else {
 				fs.readFile(srcLocation, function (err, data) {
-					console.log('opened ' + srcLocation);
 					res.write(data);
 					return res.end();
 				});
 			}
 		} else {
-			console.log('the requested file was not found');
-			console.log('sending blank');
+			console.log('src.js ERROR: an error was detected in src.js. The file wasn\'t found');
 			res.write("");
 			return res.end();
 		}
 	} catch (error) {
-		console.log(error);
+		console.log("src.js ERROR" + error);
 	}
 }).listen(8095);
 console.log('Server running at http://127.0.0.1:8095/');
